@@ -14,7 +14,7 @@ var computerChoice = alphabets[Math.floor(Math.random() * alphabets.length)];
 
 
 var updateuserLetterGuess = function() {
-  this.userLetterGuess = this.alphabets[Math.floor(Math.random() * this.alphabets.length)];
+  userLetterGuess = computerChoice;
 
   };
 

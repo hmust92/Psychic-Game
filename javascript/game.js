@@ -34,6 +34,7 @@ var reset = function() {
   
   guessesRemaining = 9;
   guessedLetters = [];
+  computerChoice = alphabets[Math.floor(Math.random() * alphabets.length)];
 
   updateuserLetterGuess();
   updateGuessesRemaining();
@@ -46,7 +47,7 @@ updateGuessesRemaining();
 
 
 document.onkeyup = function(event) {
-    guessesRemaining--;
+  guessesRemaining--;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
   guessedLetters.push(userGuess);
@@ -57,7 +58,7 @@ document.onkeyup = function(event) {
             if (userGuess == userLetterGuess){
                 wins++;
                 document.querySelector('#win').innerHTML = "Wins: " + wins;
-                alert("Yes, you are psychic!");
+                alert("Yes! The letter was '" + computerChoice + "'! you are psychic!");
                 reset();
             }
         }else if(guessesRemaining == 0){
